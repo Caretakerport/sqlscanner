@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQLi Vulnerability Scanner</title>
+</head>
+<body>
+    <h1>SQLi Vulnerability Scanner</h1>
+    <form method="post">
+        <label for="target_url">Enter Target URL:</label>
+        <input type="url" name="target_url" required>
+        <button type="submit">Scan</button>
+    </form>
+    
+    {% if vulnerabilities %}
+        <h2>SQLi vulnerabilities detected:</h2>
+        <ul>
+            {% for vulnerability in vulnerabilities %}
+                <li>{{ vulnerability }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
